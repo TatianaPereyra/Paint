@@ -6,14 +6,6 @@ Se desarrolló una aplicación tipo Paint que permite dibujar sobre un lienzo, c
 
 Para ello se utilizó la etiqueta `<canvas>` de HTML5 junto con JavaScript para la manipulación de píxeles, la implementación de herramientas de dibujo y la aplicación de filtros sobre las imágenes.
 
-## Demo
-
- [Link](https://tatianapereyra.github.io/Paint/)
-
-## Capturas
-
-![Pantalla principal](img/screenshot.png)
-
 ## Tecnologías utilizadas
 
 - HTML5
