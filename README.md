@@ -8,7 +8,7 @@ Para ello se utilizó la etiqueta `<canvas>` de HTML5 junto con JavaScript para 
 
 ## Demo
 
- [GitHub Pages](URL_DEL_DEPLOY)
+ [Link](https://tatianapereyra.github.io/Paint/)
 
 ## Capturas
 
