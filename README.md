@@ -1,46 +1,80 @@
-# TPE 2
-## Paint y Filtros de Imagen
+# TPE 2 - Paint y Filtros de Imagen
 
-## Indice:
-- [Descripción](#descripcion)
-- [Bibliografía](#bibliografia)
-- [Implementación](#implementacion)
-- [Uso](#uso)
-- [Prueba](#prueba)
+## Descripción
 
-## Descripcion:
-Se ha propuesto implementar un paint que además permita la carga y modificacion de imagenes. 
-Para esto se ha trabajado con la etiqueta <canvas> de HTML5, y JavaScript para la modificacion de esta.
+Se desarrolló una aplicación tipo Paint que permite dibujar sobre un lienzo, cargar imágenes y aplicar distintos filtros de procesamiento.
 
-## Bibliografia:
-Para la implementacion del proyecto se consultaron los siguientes artículos y páginas:
-- Kernel (Image processing): Uso y explicacion del funcionamiento de Kernels para modificar la imagen. https://en.wikipedia.org/wiki/Kernel_(image_processing)
-- Image Kernels: Explicación visual de diferentes Kernels. https://setosa.io/ev/image-kernels/
-- Códigos de color HTML: Diferentes modelos de color soportados por HTML, caracteristicas y diferencias. https://docs.aspose.com/html/es/net/tutorial/html-colors
-- Colorfulness: Descripción de términos como saturación y chroma. https://en.wikipedia.org/wiki/Colorfulness
-- HSL and HSV: Explicación de los sistemas HSL y HSV y su relación con RGB. De este enlace se obtuvieron las formulas aplicadas en el filtro de saturación. https://en.wikipedia.org/wiki/HSL_and_HSV
+Para ello se utilizó la etiqueta `<canvas>` de HTML5 junto con JavaScript para la manipulación de píxeles, la implementación de herramientas de dibujo y la aplicación de filtros sobre las imágenes.
 
-## Implementacion:
-Algunos detalles importantes de la implementación fueron los siguientes:
-Se trabajó utilizando clases y objetos para crear los diferentes filtros y herramientas. A su vez, se diseñaron dos controladores: uno para manejar los eventos de las herramientas (lápiz y goma) y otro para gestionar los eventos relacionados con las imágenes (carga y aplicación de filtros). El objetivo fue mantener separadas las responsabilidades y evitar mezclar funcionalidades dentro de `Main.js`.
-En cuanto a la implementación de filtros mediante kernels, se creó una clase general (`ConvolutionFilter.js`) cuyo constructor recibe el kernel a utilizar. También se creó un archivo `kernels.js` que almacena un diccionario con los kernels y sus filtros asociados.
-De este modo, el controlador se encarga de instanciar el filtro con el kernel adecuado según corresponda. Esta opción permite incorporar fácilmente nuevos filtros basados en kernels sin necesidad de crear nuevos archivos específicos.
+## Demo
 
-## Uso:
-El usuario puede cargar una imagen mediante el botón de subir foto y también descargar el resultado final.
-A la imagen cargada se le pueden aplicar los siguientes filtros (no es posible combinar filtros, cada filtro se aplica a la imagen original):
-- Escala de grises  
-- Sepia  
-- Brillo (con controles para ajustar la intensidad)  
-- Blanco y negro  
-- Negativo  
-- Blur  
-- Saturación (con controles)  
-- Detección de bordes  
-- Sharpen  
-- Bajorrelieve  
-Además, el usuario dispone de herramientas como lápiz y goma para dibujar sobre el canvas. En el caso del lápiz, se puede seleccionar el color y, para ambas herramientas, ajustar el grosor.
+ [GitHub Pages](URL_DEL_DEPLOY)
 
-## Prueba:
-A la hora de cargar fotos, la imagen se adapta al tamaño del lienzo, por lo que pueden quedar un poco deformadas.
-Para testear la aplicación se utilizó la imagen `prueba.jpeg`, disponible en la carpeta `img`.
+## Capturas
+
+![Pantalla principal](img/screenshot.png)
+
+## Tecnologías utilizadas
+
+- HTML5
+- CSS3
+- JavaScript 
+- Canvas
+
+## Implementación
+
+Algunos aspectos relevantes de la implementación fueron los siguientes:
+
+Se trabajó utilizando clases y objetos para representar las diferentes herramientas y filtros de la aplicación. Además, se diseñaron dos controladores independientes: uno encargado de gestionar los eventos de las herramientas de dibujo (lápiz y goma) y otro responsable de la carga de imágenes y la aplicación de filtros. Esta separación permitió mantener las responsabilidades bien definidas y evitar concentrar toda la lógica en `Main.js`.
+
+Para la implementación de filtros basados en convolución se desarrolló una clase genérica (`ConvolutionFilter.js`) cuyo constructor recibe el kernel correspondiente. Complementariamente, se creó el archivo `kernels.js`, encargado de almacenar un diccionario con los distintos kernels disponibles y sus filtros asociados.
+
+De esta manera, el controlador puede instanciar dinámicamente el filtro adecuado según la opción seleccionada por el usuario. Este enfoque facilita la incorporación de nuevos filtros basados en kernels sin necesidad de crear nuevas clases específicas.
+
+## Uso
+
+La aplicación permite cargar una imagen mediante el botón de selección de archivos y descargar posteriormente el resultado obtenido.
+
+Sobre la imagen cargada se pueden aplicar los siguientes filtros:
+
+- Escala de grises
+- Sepia
+- Brillo (con control de intensidad)
+- Blanco y negro
+- Negativo
+- Blur
+- Saturación (con control de intensidad)
+- Detección de bordes
+- Sharpen
+- Bajorrelieve
+
+> Los filtros no son acumulativos. Cada filtro se aplica sobre la imagen original cargada.
+
+Además, el usuario dispone de herramientas de dibujo como lápiz y goma. En el caso del lápiz, es posible seleccionar el color de trazo y, para ambas herramientas, ajustar el grosor.
+
+## Limitaciones
+
+Al cargar una imagen, esta se adapta automáticamente al tamaño del lienzo. Dependiendo de sus dimensiones originales, puede producirse cierta deformación debido al escalado.
+
+## Pruebas
+
+Para verificar el funcionamiento de la aplicación se utilizó la imagen `prueba.jpeg`, disponible dentro de la carpeta `img`.
+
+## Bibliografía
+
+Durante el desarrollo del proyecto se consultaron los siguientes artículos y recursos:
+
+- **Kernel (Image Processing):** explicación del funcionamiento de los kernels utilizados para el procesamiento de imágenes.  
+  https://en.wikipedia.org/wiki/Kernel_(image_processing)
+
+- **Image Kernels:** explicación visual e interactiva de distintos kernels y sus efectos.  
+  https://setosa.io/ev/image-kernels/
+
+- **Códigos de color HTML:** descripción de los distintos modelos de color soportados por HTML y sus características.  
+  https://docs.aspose.com/html/es/net/tutorial/html-colors
+
+- **Colorfulness:** definición de conceptos relacionados con el color, como saturación y chroma.  
+  https://en.wikipedia.org/wiki/Colorfulness
+
+- **HSL and HSV:** explicación de los modelos HSL y HSV y su relación con RGB. Las fórmulas utilizadas para el filtro de saturación fueron obtenidas de este recurso.  
+  https://en.wikipedia.org/wiki/HSL_and_HSV
